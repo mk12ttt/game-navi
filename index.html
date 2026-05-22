@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>おすすめソシャゲランキング2026 | 今遊ぶべき神ゲー10選</title>
+  <style>
+    :root {
+      --primary: #ff5722;
+      --primary-dark: #e64a19;
+      --secondary: #1976d2;
+      --accent: #ffc107;
+      --bg: #f5f5f5;
+      --card-bg: #ffffff;
+      --text: #212121;
+      --text-muted: #757575;
+      --border: #e0e0e0;
+      --ios-color: #000000;
+      --android-color: #3ddc84;
+      --rank-gold: #f5c518;
+      --rank-silver: #b0bec5;
+      --rank-bronze: #a1887f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+      color: white;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .header-logo span { color: var(--accent); }
+
+    .header-tagline {
+      font-size: 11px;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(160deg, #0d1b6e 0%, #1565c0 40%, #0288d1 100%);
+      color: white;
+      text-align: center;
+      padding: 56px 20px 48px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .hero p {
+      font-size: 14px;
+      opacity: 0.85;
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-meta {
+      font-size: 11px;
+      opacity: 0.6;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 24px;
+    }
+
+    @media (max-width: 700px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+
+    /* ===== GAME CARDS ===== */
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      padding-left: 12px;
+      border-left: 4px solid var(--primary);
+      color: #1a237e;
+    }
+
+    .game-list { display: flex; flex-direction: column; gap: 20px; }
+
+    .game-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 18px 12px;
+      position: relative;
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 900;
+      color: white;
+      border-radius: 12px 0 12px 0;
+    }
+
+    .rank-1 { background: linear-gradient(135deg, #f5c518, #ff9800); }
+    .rank-2 { background: linear-gradient(135deg, #90a4ae, #607d8b); }
+    .rank-3 { background: linear-gradient(135deg, #a1887f, #6d4c41); }
+    .rank-other { background: linear-gradient(135deg, #78909c, #546e7a); font-size: 13px; }
+
+    .game-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      margin-left: 32px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .game-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      display: block;
+    }
+
+    .icon-emoji {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .card-title-block { flex: 1; min-width: 0; }
+
+    .game-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .genre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .genre-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+
+    .tag-rpg    { color: #7b1fa2; border-color: #ce93d8; background: #f3e5f5; }
+    .tag-puzzle { color: #1565c0; border-color: #90caf9; background: #e3f2fd; }
+    .tag-action { color: #c62828; border-color: #ef9a9a; background: #ffebee; }
+    .tag-sim    { color: #2e7d32; border-color: #a5d6a7; background: #e8f5e9; }
+    .tag-card   { color: #e65100; border-color: #ffcc80; background: #fff3e0; }
+    .tag-free   { color: #37474f; border-color: #cfd8dc; background: #eceff1; }
+    .tag-strategy { color: #4a148c; border-color: #ce93d8; background: #f3e5f5; }
+    .tag-music  { color: #880e4f; border-color: #f48fb1; background: #fce4ec; }
+
+    .star-row {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .stars { color: #ffc107; font-size: 14px; letter-spacing: -1px; }
+    .star-score { font-size: 12px; color: var(--text-muted); font-weight: 700; }
+
+    /* pickup */
+    .pickup-block {
+      background: linear-gradient(90deg, #fff8e1, #fffde7);
+      border-top: 1px solid #ffe082;
+      border-bottom: 1px solid #ffe082;
+      padding: 10px 18px;
+    }
+
+    .pickup-label {
+      font-size: 10px;
+      font-weight: 900;
+      color: #f57c00;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .pickup-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .pickup-list li {
+      font-size: 12px;
+      color: #5d4037;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .pickup-list li::before {
+      content: "✦";
+      color: #ff9800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* description */
+    .card-desc {
+      padding: 12px 18px;
+      font-size: 13px;
+      color: #424242;
+      line-height: 1.7;
+    }
+
+    /* store buttons */
+    .card-footer {
+      padding: 12px 18px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .store-btn:hover { opacity: 0.85; transform: scale(1.02); }
+
+    .btn-ios {
+      background: #000000;
+      color: white;
+    }
+
+    .btn-android {
+      background: #01875f;
+      color: white;
+    }
+
+    .store-btn-icon { font-size: 16px; }
+
+    .free-label {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: #f5f5f5;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    /* HOT badge */
+    .hot-badge {
+      background: var(--primary);
+      color: white;
+      font-size: 9px;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    .sidebar-widget {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .widget-title {
+      background: #1a237e;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .widget-body { padding: 12px 14px; }
+
+    .quick-rank-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .quick-rank-item:last-child { border-bottom: none; }
+
+    .quick-rank-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .qr-1 { background: #f5c518; }
+    .qr-2 { background: #90a4ae; }
+    .qr-3 { background: #a1887f; }
+    .qr-other { background: #78909c; font-size: 10px; }
+
+    .quick-rank-icon { font-size: 18px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a237e;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 32px 16px;
+      font-size: 12px;
+      margin-top: 32px;
+    }
+
+    footer p + p { margin-top: 6px; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #bbb; border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="header-logo">🎮 <span>GameNavi</span></div>
+      <div class="header-tagline">おすすめソシャゲ情報サイト</div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🔥 2026年版 最新ランキング</div>
+  <h1>今すぐ遊べる<br><em>おすすめソシャゲ</em> 10選</h1>
+  <p>無料で楽しめる人気スマホゲームをランキング形式で紹介！iOS・Android対応アプリを厳選しました。</p>
+  <div class="hero-meta">
+    <span>📅 更新日：2026年5月22日</span>
+    <span>📱 iOS・Android対応</span>
+    <span>🆓 基本プレイ無料</span>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="container">
+  <main>
+    <h2 class="section-title">おすすめソシャゲ ランキングTOP10</h2>
+    <div class="game-list">
+
+      <!-- ===== 1位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-1">1</div>
+          <div class="game-icon">
+            <img src="images/genshin.png" alt="原神" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">⚔️</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">原神（Genshin Impact）<span class="hot-badge">HOT</span></div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-action">アクション</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★★</span>
+              <span class="star-score">4.8 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>広大なオープンワールドをスマホで完全体験できる</li>
+            <li>美麗グラフィックと感動的なストーリーが話題</li>
+            <li>キャラクターガチャでお気に入りを育成する楽しさ</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          世界的な大ヒットを記録したオープンワールドRPG。テイワット大陸を舞台に、兄妹を探す旅が始まる。水・炎・風など7つの元素を使い分けた爽快アクションが魅力。PCやPS版とも連携可能で、スマホゲームの常識を超えたボリュームを誇る。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/genshin-impact/id1517783697" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 2位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-2">2</div>
+          <div class="game-icon">
+            <img src="images/monsterstrike.png" alt="モンスターストライク" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🐉</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">モンスターストライク</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-action">アクション</span>
+              <span class="genre-tag tag-puzzle">パズル</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★★</span>
+              <span class="star-score">4.7 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>引いて弾くだけ！直感的な操作で誰でも楽しめる</li>
+            <li>最大4人マルチプレイで友達と一緒に盛り上がれる</li>
+            <li>累計利用者数3億人超えの国民的スマホゲーム</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          弾いて当てる「ひっぱりハンティングRPG」の王様。シンプルな操作なのに戦略性が高く、幅広い年齢層に愛されている。コラボイベントも豊富で常に新鮮なコンテンツが楽しめる。まさに日本のソシャゲの象徴的存在。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AF/id580085091" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.co.mixi.monsterstrike&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 3位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-3">3</div>
+          <div class="game-icon">
+            <img src="images/umamusume.png" alt="ウマ娘" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🐎</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">ウマ娘 プリティーダービー</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-sim">育成シミュ</span>
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★★</span>
+              <span class="star-score">4.6 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>競走馬をモチーフにした個性豊かなキャラクターを育成</li>
+            <li>育成シミュとレースが絶妙に組み合わさった中毒性</li>
+            <li>リリースから大ヒットを記録、今もアップデート継続中</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          実在の競走馬を美少女キャラに擬人化した育成シミュレーションRPG。トレーナーとして「ウマ娘」を鍛え、チャンピオンレースを目指す。育成の結果がレースに直結するやり込み要素が非常に高く、長期間楽しめる。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/id1489013325" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.co.cygames.umamusume&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 4位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">4</div>
+          <div class="game-icon">
+            <img src="images/projectsekai.png" alt="プロジェクトセカイ" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🎵</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">プロジェクトセカイ カラフルステージ！</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-music">音楽ゲーム</span>
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.5 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>ボカロ曲×オリジナルキャラのリズムゲーム</li>
+            <li>ストーリーが感動的で読み応えあり</li>
+            <li>マルチライブで世界中のプレイヤーと同時プレイ</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          初音ミクなどの人気バーチャルシンガーとオリジナルキャラが共演するリズムゲーム。バンド・ダンス・ストリートなど個性豊かな5グループのストーリーが楽しめる。楽曲数が豊富でやり込み甲斐も抜群。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%BB%E3%82%AB%E3%82%A4-%E3%82%AB%E3%83%A9%E3%83%95%E3%83%AB%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8/id1489456123" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.sega.pjsekai&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 5位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">5</div>
+          <div class="game-icon">
+            <img src="images/arknights.png" alt="アークナイツ" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🧪</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">アークナイツ（Arknights）</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-strategy">ストラテジー</span>
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.5 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>タワーディフェンス×RPGの本格戦略ゲーム</li>
+            <li>重厚なSFストーリーと魅力的なキャラクター</li>
+            <li>理性（スタミナ）消費量が少なく社会人にやさしい</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          オペレーターを配置して敵の侵攻を防ぐタワーディフェンス型RPG。難易度が高く歯ごたえがあるが、クリアした時の達成感は格別。ダークで独特の世界観と深いストーリーがコアなファンを惹きつけている。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/arknights/id1464872231" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.YoStarJP.Arknights&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 6位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">6</div>
+          <div class="game-icon">
+            <img src="images/bluearchive.png" alt="ブルーアーカイブ" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🎓</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">ブルーアーカイブ（Blue Archive）</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-strategy">ストラテジー</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.4 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>学園×銃撃戦という独自の世界観が新鮮</li>
+            <li>感動的なストーリーでキャラへの愛着が深まる</li>
+            <li>戦術的なバトルとキャラ育成のバランスが絶妙</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          学園都市「キヴォトス」を舞台にした戦略RPG。先生として生徒たちと絆を育みながら謎を解き明かすストーリーが魅力。グラフィックの美しさと楽曲のクオリティも高く評価されている。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96/id1581361523" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.nexon.bluearchive&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 7位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">7</div>
+          <div class="game-icon">
+            <img src="images/onepiecebr.png" alt="ONE PIECEバウンティラッシュ" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">⚓</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">ONE PIECE バウンティラッシュ</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-action">アクション</span>
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.3 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>4v4リアルタイムバトルで白熱の宝争奪戦</li>
+            <li>ONE PIECEの名シーンをゲームで追体験できる</li>
+            <li>お気に入りキャラで戦える嬉しいコレクション要素</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          大人気漫画「ONE PIECE」のキャラクターでリアルタイムバトルを楽しめるアクションゲーム。4対4のチームバトルで宝を争う爽快感が癖になる。ルフィやゾロなど人気キャラが勢揃いしており、ワンピースファンなら必須。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/one-piece-%E3%83%90%E3%82%A6%E3%83%B3%E3%83%86%E3%82%A3%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5/id1404205312" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.bandainamcoent.onepiecebr_jp&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 8位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">8</div>
+          <div class="game-icon">
+            <img src="images/dqwalk.png" alt="ドラゴンクエストウォーク" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🗺️</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">ドラゴンクエストウォーク</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-rpg">位置情報RPG</span>
+              <span class="genre-tag tag-action">アクション</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.2 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>リアルの街を歩いてモンスターと戦う新感覚RPG</li>
+            <li>DQシリーズの名作シナリオを追体験できる</li>
+            <li>歩くほど強くなる！運動習慣とゲームを両立</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          位置情報を使い現実の街を歩きながら冒険するドラクエシリーズのスマホゲーム。おなじみのモンスターや魔法、装備システムがそのままスマホに。通勤・散歩しながら楽しめるのが最大の特徴で、健康増進にも貢献。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF/id1478829833" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.dqwalk&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 9位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">9</div>
+          <div class="game-icon">
+            <img src="images/puzzledragons.png" alt="パズル&ドラゴンズ" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🔮</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">パズル&ドラゴンズ（パズドラ）</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-puzzle">パズル</span>
+              <span class="genre-tag tag-rpg">RPG</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.2 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>ドロップ消しパズルとRPGが融合した唯一無二のゲーム</li>
+            <li>スマホゲームの礎を築いた歴史的名作</li>
+            <li>10年以上サービス継続中の安定した運営</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          日本のソシャゲブームを牽引した伝説のパズルRPG。パズルの腕前がそのままバトルに直結するため奥深い戦略性があり、上手くなるほど楽しくなる。長年愛され続けるコンテンツの充実度はトップクラス。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%91%E3%82%BA%E3%83%AB-%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%BA/id572141113" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.gungho.pad&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+      <!-- ===== 10位 ===== -->
+      <article class="game-card">
+        <div class="card-header">
+          <div class="rank-badge rank-other">10</div>
+          <div class="game-icon">
+            <img src="images/shadowverse.png" alt="シャドウバース" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <span class="icon-emoji" style="display:none;">🃏</span>
+          </div>
+          <div class="card-title-block">
+            <div class="game-title">Shadowverse（シャドウバース）</div>
+            <div class="genre-tags">
+              <span class="genre-tag tag-card">カードゲーム</span>
+              <span class="genre-tag tag-strategy">ストラテジー</span>
+              <span class="genre-tag tag-free">基本無料</span>
+            </div>
+            <div class="star-row">
+              <span class="stars">★★★★☆</span>
+              <span class="star-score">4.1 / 5.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="pickup-block">
+          <div class="pickup-label">✦ PICKUP ポイント</div>
+          <ul class="pickup-list">
+            <li>アニメ調の美麗なカードイラストが圧倒的</li>
+            <li>eスポーツ大会も開催される本格的な競技シーン</li>
+            <li>無料でも十分カードが集まる太っ腹な設計</li>
+          </ul>
+        </div>
+        <div class="card-desc">
+          サイゲームスが贈るデジタルカードゲームの金字塔。8つのクラスからデッキを構築し、1対1のカードバトルで頂点を目指す。カジュアルからガチ対戦まで幅広く対応しており、世界大会も開催される公式eスポーツタイトル。
+        </div>
+        <div class="card-footer">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/shadowverse/id1059929955" target="_blank" rel="noopener">
+            <span class="store-btn-icon"></span>App Store
+          </a>
+          <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.co.cygames.shadowverse&hl=ja" target="_blank" rel="noopener">
+            <span class="store-btn-icon">🤖</span>Google Play
+          </a>
+          <span class="free-label">🆓 基本無料</span>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <div class="widget-title">⚡ クイックランキング</div>
+      <div class="widget-body">
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-1">1</span>
+          <span class="quick-rank-icon">⚔️</span>
+          <span>原神</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-2">2</span>
+          <span class="quick-rank-icon">🐉</span>
+          <span>モンスト</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-3">3</span>
+          <span class="quick-rank-icon">🐎</span>
+          <span>ウマ娘</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">4</span>
+          <span class="quick-rank-icon">🎵</span>
+          <span>プロセカ</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">5</span>
+          <span class="quick-rank-icon">🧪</span>
+          <span>アークナイツ</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">6</span>
+          <span class="quick-rank-icon">🎓</span>
+          <span>ブルアカ</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">7</span>
+          <span class="quick-rank-icon">⚓</span>
+          <span>バウンティラッシュ</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">8</span>
+          <span class="quick-rank-icon">🗺️</span>
+          <span>DQウォーク</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">9</span>
+          <span class="quick-rank-icon">🔮</span>
+          <span>パズドラ</span>
+        </a>
+        <a href="#" class="quick-rank-item">
+          <span class="quick-rank-num qr-other">10</span>
+          <span class="quick-rank-icon">🃏</span>
+          <span>シャドバ</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-title">🏷️ ジャンル別で探す</div>
+      <div class="widget-body" style="display:flex;flex-wrap:wrap;gap:6px;padding:12px;">
+        <span class="genre-tag tag-rpg" style="cursor:pointer;">⚔️ RPG</span>
+        <span class="genre-tag tag-puzzle" style="cursor:pointer;">🔮 パズル</span>
+        <span class="genre-tag tag-action" style="cursor:pointer;">💥 アクション</span>
+        <span class="genre-tag tag-sim" style="cursor:pointer;">🐎 育成シミュ</span>
+        <span class="genre-tag tag-card" style="cursor:pointer;">🃏 カード</span>
+        <span class="genre-tag tag-strategy" style="cursor:pointer;">♟️ ストラテジー</span>
+        <span class="genre-tag tag-music" style="cursor:pointer;">🎵 音楽</span>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-title">📋 ランキング基準</div>
+      <div class="widget-body" style="font-size:12px;color:#555;line-height:1.8;">
+        <p>当サイトのランキングは以下の基準で総合評価しています。</p>
+        <br>
+        <ul style="padding-left:16px;">
+          <li>ストア評価・口コミ</li>
+          <li>コンテンツの充実度</li>
+          <li>運営の継続性</li>
+          <li>初心者への親切さ</li>
+          <li>課金圧の少なさ</li>
+        </ul>
+        <br>
+        <p style="color:#999;">※ストアリンクはアフィリエイト未使用です。</p>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>🎮 <strong style="color:white;">GameNavi</strong> — おすすめソシャゲ情報サイト</p>
+  <p>掲載情報は2026年5月時点のものです。最新情報は各ストアでご確認ください。</p>
+  <p style="margin-top:12px;">© 2026 GameNavi. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
