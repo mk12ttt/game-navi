@@ -24,6 +24,8 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
       background: var(--bg);
@@ -146,6 +148,7 @@
       overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.15s, box-shadow 0.15s;
+      scroll-margin-top: 72px;
     }
 
     .game-card:hover {
@@ -465,7 +468,7 @@
     <div class="game-list">
 
       <!-- ===== 1位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-1">
         <div class="card-header">
           <div class="rank-badge rank-1">1</div>
           <div class="game-icon">
@@ -508,7 +511,7 @@
       </article>
 
       <!-- ===== 2位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-2">
         <div class="card-header">
           <div class="rank-badge rank-2">2</div>
           <div class="game-icon">
@@ -540,7 +543,7 @@
           弾いて当てる「ひっぱりハンティングRPG」の王様。シンプルな操作なのに戦略性が高く、幅広い年齢層に愛されている。コラボイベントも豊富で常に新鮮なコンテンツが楽しめる。まさに日本のソシャゲの象徴的存在。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AF/id580085091" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AF/id658511662" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.co.mixi.monsterstrike&hl=ja" target="_blank" rel="noopener">
@@ -551,7 +554,7 @@
       </article>
 
       <!-- ===== 3位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-3">
         <div class="card-header">
           <div class="rank-badge rank-3">3</div>
           <div class="game-icon">
@@ -583,7 +586,7 @@
           実在の競走馬を美少女キャラに擬人化した育成シミュレーションRPG。トレーナーとして「ウマ娘」を鍛え、チャンピオンレースを目指す。育成の結果がレースに直結するやり込み要素が非常に高く、長期間楽しめる。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/id1489013325" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/id1325457827" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.co.cygames.umamusume&hl=ja" target="_blank" rel="noopener">
@@ -594,7 +597,7 @@
       </article>
 
       <!-- ===== 4位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-4">
         <div class="card-header">
           <div class="rank-badge rank-other">4</div>
           <div class="game-icon">
@@ -626,7 +629,7 @@
           初音ミクなどの人気バーチャルシンガーとオリジナルキャラが共演するリズムゲーム。バンド・ダンス・ストリートなど個性豊かな5グループのストーリーが楽しめる。楽曲数が豊富でやり込み甲斐も抜群。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%BB%E3%82%AB%E3%82%A4-%E3%82%AB%E3%83%A9%E3%83%95%E3%83%AB%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8/id1489456123" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%BB%E3%82%AB%E3%82%A4-%E3%82%AB%E3%83%A9%E3%83%95%E3%83%AB%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8/id1489932710" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.sega.pjsekai&hl=ja" target="_blank" rel="noopener">
@@ -637,7 +640,7 @@
       </article>
 
       <!-- ===== 5位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-5">
         <div class="card-header">
           <div class="rank-badge rank-other">5</div>
           <div class="game-icon">
@@ -669,7 +672,7 @@
           オペレーターを配置して敵の侵攻を防ぐタワーディフェンス型RPG。難易度が高く歯ごたえがあるが、クリアした時の達成感は格別。ダークで独特の世界観と深いストーリーがコアなファンを惹きつけている。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/arknights/id1464872231" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/arknights/id1478990007" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.YoStarJP.Arknights&hl=ja" target="_blank" rel="noopener">
@@ -680,7 +683,7 @@
       </article>
 
       <!-- ===== 6位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-6">
         <div class="card-header">
           <div class="rank-badge rank-other">6</div>
           <div class="game-icon">
@@ -712,7 +715,7 @@
           学園都市「キヴォトス」を舞台にした戦略RPG。先生として生徒たちと絆を育みながら謎を解き明かすストーリーが魅力。グラフィックの美しさと楽曲のクオリティも高く評価されている。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96/id1581361523" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96/id1515877221" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.nexon.bluearchive&hl=ja" target="_blank" rel="noopener">
@@ -723,7 +726,7 @@
       </article>
 
       <!-- ===== 7位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-7">
         <div class="card-header">
           <div class="rank-badge rank-other">7</div>
           <div class="game-icon">
@@ -755,7 +758,7 @@
           大人気漫画「ONE PIECE」のキャラクターでリアルタイムバトルを楽しめるアクションゲーム。4対4のチームバトルで宝を争う爽快感が癖になる。ルフィやゾロなど人気キャラが勢揃いしており、ワンピースファンなら必須。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/one-piece-%E3%83%90%E3%82%A6%E3%83%B3%E3%83%86%E3%82%A3%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5/id1404205312" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/one-piece-%E3%83%90%E3%82%A6%E3%83%B3%E3%83%86%E3%82%A3%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5/id1322310031" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.bandainamcoent.onepiecebr_jp&hl=ja" target="_blank" rel="noopener">
@@ -766,7 +769,7 @@
       </article>
 
       <!-- ===== 8位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-8">
         <div class="card-header">
           <div class="rank-badge rank-other">8</div>
           <div class="game-icon">
@@ -798,7 +801,7 @@
           位置情報を使い現実の街を歩きながら冒険するドラクエシリーズのスマホゲーム。おなじみのモンスターや魔法、装備システムがそのままスマホに。通勤・散歩しながら楽しめるのが最大の特徴で、健康増進にも貢献。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF/id1478829833" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AF/id1439417234" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=com.square_enix.android_googleplay.dqwalk&hl=ja" target="_blank" rel="noopener">
@@ -809,7 +812,7 @@
       </article>
 
       <!-- ===== 9位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-9">
         <div class="card-header">
           <div class="rank-badge rank-other">9</div>
           <div class="game-icon">
@@ -841,7 +844,7 @@
           日本のソシャゲブームを牽引した伝説のパズルRPG。パズルの腕前がそのままバトルに直結するため奥深い戦略性があり、上手くなるほど楽しくなる。長年愛され続けるコンテンツの充実度はトップクラス。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%91%E3%82%BA%E3%83%AB-%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%BA/id572141113" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/%E3%83%91%E3%82%BA%E3%83%AB-%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%BA/id493470467" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.gungho.pad&hl=ja" target="_blank" rel="noopener">
@@ -852,7 +855,7 @@
       </article>
 
       <!-- ===== 10位 ===== -->
-      <article class="game-card">
+      <article class="game-card" id="game-10">
         <div class="card-header">
           <div class="rank-badge rank-other">10</div>
           <div class="game-icon">
@@ -884,7 +887,7 @@
           サイゲームスが贈るデジタルカードゲームの金字塔。8つのクラスからデッキを構築し、1対1のカードバトルで頂点を目指す。カジュアルからガチ対戦まで幅広く対応しており、世界大会も開催される公式eスポーツタイトル。
         </div>
         <div class="card-footer">
-          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/shadowverse/id1059929955" target="_blank" rel="noopener">
+          <a class="store-btn btn-ios" href="https://apps.apple.com/jp/app/shadowverse/id6472019540" target="_blank" rel="noopener">
             <span class="store-btn-icon"></span>App Store
           </a>
           <a class="store-btn btn-android" href="https://play.google.com/store/apps/details?id=jp.co.cygames.shadowverse&hl=ja" target="_blank" rel="noopener">
@@ -903,52 +906,52 @@
     <div class="sidebar-widget">
       <div class="widget-title">⚡ クイックランキング</div>
       <div class="widget-body">
-        <a href="#" class="quick-rank-item">
+        <a href="#game-1" class="quick-rank-item">
           <span class="quick-rank-num qr-1">1</span>
           <span class="quick-rank-icon">⚔️</span>
           <span>原神</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-2" class="quick-rank-item">
           <span class="quick-rank-num qr-2">2</span>
           <span class="quick-rank-icon">🐉</span>
           <span>モンスト</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-3" class="quick-rank-item">
           <span class="quick-rank-num qr-3">3</span>
           <span class="quick-rank-icon">🐎</span>
           <span>ウマ娘</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-4" class="quick-rank-item">
           <span class="quick-rank-num qr-other">4</span>
           <span class="quick-rank-icon">🎵</span>
           <span>プロセカ</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-5" class="quick-rank-item">
           <span class="quick-rank-num qr-other">5</span>
           <span class="quick-rank-icon">🧪</span>
           <span>アークナイツ</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-6" class="quick-rank-item">
           <span class="quick-rank-num qr-other">6</span>
           <span class="quick-rank-icon">🎓</span>
           <span>ブルアカ</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-7" class="quick-rank-item">
           <span class="quick-rank-num qr-other">7</span>
           <span class="quick-rank-icon">⚓</span>
           <span>バウンティラッシュ</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-8" class="quick-rank-item">
           <span class="quick-rank-num qr-other">8</span>
           <span class="quick-rank-icon">🗺️</span>
           <span>DQウォーク</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-9" class="quick-rank-item">
           <span class="quick-rank-num qr-other">9</span>
           <span class="quick-rank-icon">🔮</span>
           <span>パズドラ</span>
         </a>
-        <a href="#" class="quick-rank-item">
+        <a href="#game-10" class="quick-rank-item">
           <span class="quick-rank-num qr-other">10</span>
           <span class="quick-rank-icon">🃏</span>
           <span>シャドバ</span>
